@@ -16,9 +16,9 @@ jobs:
 
 
     - name: Set up .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0'
+        dotnet-version: '9.0'
 
 
     - name: Restore dependencies
@@ -33,6 +33,3 @@ jobs:
       run: dotnet publish --configuration Release --output ./published
 
 
-    - name: Deploy to server (ejemplo de despliegue)
-      run: |
-        scp -r ./published username@server:/path/to/deploy
